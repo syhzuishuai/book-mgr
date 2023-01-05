@@ -14,22 +14,30 @@
       <a-tabs>
         <a-tab-pane key="1" tab="登录">
           <div class="item">
-            <a-input size="large" placeholder="账户">
+            <a-input
+              size="large"
+              placeholder="账户"
+              v-model:value="loginForm.account"
+            >
               <template #prefix>
                 <UserOutlined />
               </template>
             </a-input>
           </div>
           <div class="item">
-            <a-input size="large" placeholder="密码">
+            <a-input-password
+              size="large"
+              placeholder="密码"
+              v-model:value="loginForm.password"
+            >
               <template #prefix> <LockOutlined /> </template
-            ></a-input>
+            ></a-input-password>
           </div>
           <div class="item">
             <a href="">忘记密码</a>
           </div>
           <div class="item">
-            <a-button size="large" type="primary"> 登入 </a-button>
+            <a-button size="large" type="primary" @click="login">登入</a-button>
           </div>
         </a-tab-pane>
         <a-tab-pane key="2" tab="注册" force-render>
@@ -45,16 +53,20 @@
             </a-input>
           </div>
           <div class="item">
-            <a-input
+            <a-input-password
               size="large"
               placeholder="密码"
               v-model:value="regForm.password"
             >
               <template #prefix> <LockOutlined /> </template>
-            </a-input>
+            </a-input-password>
           </div>
           <div class="item">
-            <a-input size="large" placeholder="邀请码">
+            <a-input
+              size="large"
+              placeholder="邀请码"
+              v-model:value="regForm.inviteCode"
+            >
               <template #prefix> <UsergroupAddOutlined /> </template>
             </a-input>
           </div>
